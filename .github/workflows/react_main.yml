@@ -26,11 +26,15 @@ jobs:
       uses: actions/setup-node@v2.1.1
       with:
           version: 12
-    - name: GitHub Action for Yarn
-      uses: Borales/actions-yarn@v2.3.0
-      with:
-        # Yarn command
-        cmd: install
+    - name: 'GitHub Action for Yarn'
+      description: 'Wraps the yarn CLI to enable common yarn commands'
+      branding:
+        icon: 'package'
+       color: 'blue'
+     inputs:
+      cmd:
+       description: 'Yarn command'
+
     - name: creating build  
       run: yarn build
     - name: installing surge  
